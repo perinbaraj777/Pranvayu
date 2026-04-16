@@ -1,0 +1,20 @@
+compatibility_date = "2025-04-22"
+main = "workers-site/index.js"
+
+assets = { directory = "./dist", binding = "ASSETS", run_worker_first = true, html_handling = "force-trailing-slash", not_found_handling = "single-page-application" }
+
+[[kv_namespaces]]
+binding = "KAVIN"
+id = "7404c38c45cb4abdaa1afe8f4455ae2b"
+
+
+[observability.logs]
+enabled = true
+
+
+[env.dev]
+vars = { BACKEND_URL = "https://dev.seedlingsocial.org"}
+name = "kavin_dev"
+kv_namespaces = [
+  { binding = "KAVIN", id = "7404c38c45cb4abdaa1afe8f4455ae2b" }
+]

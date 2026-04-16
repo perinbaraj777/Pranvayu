@@ -7,7 +7,13 @@
     "dev": "vite",
     "build": "tsc -b && vite build",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "preview:dev": "npm run build && wrangler dev --env dev",
+    "preview:qa": "npm run build && wrangler dev --env qa",
+    "preview:prod": "npm run build && wrangler dev --env prod",
+    "deploy:dev": "npm run build && wrangler deploy --env dev",
+    "deploy:qa": "npm run build && wrangler deploy --env qa",
+    "deploy:prod": "npm run build && wrangler deploy --env prod"
   },
   "dependencies": {
     "react": "^19.2.4",
